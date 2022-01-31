@@ -31,3 +31,10 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+# Contribution
+
+1. Pick an issue you wont to work on either from the **Issues** or the **Projects** tab
+2. Comment on the issue that you are taking on tackling it, so everybody knows if the issue is already taken.
+3. Create a **Pull Request** against the `main` branch and reference the issue in question
+4. Wait for approval and resolve any suggested changes
+
