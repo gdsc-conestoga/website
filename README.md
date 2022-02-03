@@ -1,6 +1,6 @@
 # Conestoga GDSC website
 
-This is the repository for our club's website: //TODO
+This is the repository for our club's website: https://gdsc-conestoga.web.app/
 
 # Development
 
