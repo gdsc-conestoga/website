@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Resources from './pages/resources/Resources'
+import Calendar from './pages/calendar/Calendar'
+import Blog from './pages/blog/Blog'
+import App from './pages/home/App'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}/>
+      <Route path="/resources" element={<Resources />}/>
+      <Route path="/calendar" element={<Calendar />}/>
+      <Route path="/blog" element={<Blog />}/>
+    </Routes>
+
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
