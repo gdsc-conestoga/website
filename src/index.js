@@ -8,11 +8,13 @@ import Calendar from './pages/calendar/Calendar'
 import Blog from './pages/blog/Blog'
 import App from './pages/home/App'
 import PageNotFound from './pages/404/404'
+import Menu from './components/menu/Menu'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Menu />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/resources" element={<Resources />}/>
