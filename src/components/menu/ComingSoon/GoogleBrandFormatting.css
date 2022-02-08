@@ -1,0 +1,175 @@
+/* 
+https://brandpalettes.com/google-colors/ I decided to use brand colours of google to keep theme consistent - A.N.
+CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-beautiful-css-typography-design/
+*/
+
+:root {
+  --google-blue: #4285f4;
+  --google-red: #db4437;
+  --google-yellow: #f4b400;
+  --google-green: #0f9d58;
+  --google-white: #ffff;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 5px solid var(--google-blue);
+  padding: 10px;
+}
+
+/* Header 1 from Google Blue to Google White  */
+.h1-blue {
+  color: var(--google-blue);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.h1-red {
+  color: var(--google-red);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.h1-yellow {
+  color: var(--google-yellow);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.h1-green {
+  color: var(--google-green);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.h1-white {
+  color: var(--google-white);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+
+/* Header 2 from Google Blue to Google White  */
+.h2-blue {
+  color: var(--google-blue);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+.h2-red {
+  color: var(--google-red);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+.h2-yellow {
+  color: var(--google-yellow);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+.h2-green {
+  color: var(--google-green);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+}
+
+.h2-white {
+  color: var(--google-white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+/* Paragraph from Google Blue to Google White  */
+.p-blue {
+  color: var(--google-blue);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.p-red {
+  color: var(--google-red);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+.p-yellow {
+  color: var(--google-yellow);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+.p-green {
+  color: var(--google-green);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.p-white {
+  color: var(--google-white);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+

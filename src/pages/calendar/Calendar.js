@@ -1,6 +1,12 @@
+import InProgress from "../../components/menu/ComingSoon/ComingSoon";
+
 function Calendar() {
   return (
-    <div>Upcoming events</div>
+    <div>
+      <InProgress/>
+      This calendar will be about upcoming events.
+    </div>
+   
   );
 }
 
