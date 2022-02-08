@@ -1,6 +1,14 @@
+import './404.css'
+import { Link } from "react-router-dom"
+
 function PageNotFound() {
   return (
-    <div>404 Page not found</div>
+    <div className="not-found">
+      <h1>404 - Page not Found</h1>
+      <div>
+        Return <Link to="/">home</Link>
+      </div>
+    </div>
   );
 }
 

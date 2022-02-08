@@ -1,8 +1,17 @@
-.menu-item {
-  display: block;
-}
-
 .menu {
   top: 2rem;
   left: 2rem;
+  display: flex;
+  height: 5vh;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+}
+
+.menu-item {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

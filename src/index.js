@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Resources from './pages/resources/Resources'
 import Calendar from './pages/calendar/Calendar'
 import Blog from './pages/blog/Blog'
-import App from './pages/home/App'
+import Home from './pages/home/Home'
 import PageNotFound from './pages/404/404'
 import Menu from './components/menu/Menu'
 
@@ -14,14 +14,18 @@ import Menu from './components/menu/Menu'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Menu />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/resources" element={<Resources />}/>
-        <Route path="/calendar" element={<Calendar />}/>
-        <Route path="/blog" element={<Blog />}/>
-        <Route path="/*" element={<PageNotFound />} />
-      </Routes>
+      <header>
+        <Menu />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resources" element={<Resources />}/>
+          <Route path="/calendar" element={<Calendar />}/>
+          <Route path="/blog" element={<Blog />}/>
+          <Route path="/*" element={<PageNotFound />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
