@@ -8,9 +8,7 @@ function ComingSoon ()
 <h1 className='h1-green'> <span class = "h1-blue">
 C
     </span>
-    <span class = "h1-red">
-o
-    </span>
+    <span class = "h1-red">o</span>
     <span class = "h1-yellow">
 m
     </span>
