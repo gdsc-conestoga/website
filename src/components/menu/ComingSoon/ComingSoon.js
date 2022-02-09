@@ -5,7 +5,7 @@ function ComingSoon ()
 {
     return ( 
         <div className='center'>  
-<h1 className='h1-green'> <span class = "h1-blue">
+<h1 className='h1-green'> <span className = "h1-blue">
 C
     </span>
     <span class = "h1-red">o</span>
