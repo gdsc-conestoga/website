@@ -4,7 +4,8 @@ function Calendar() {
   return (
     <div>
       <ComingSoon/>
-      This calendar will be about upcoming events.
+      <br/>
+      <p className="google-text-2">This calendar will be about upcoming events. </p>
     </div>
    
   );
