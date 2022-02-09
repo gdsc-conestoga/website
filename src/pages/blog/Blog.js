@@ -6,7 +6,6 @@ function Blog ()
   return (
     <div>
      <ComingSoon/>         
-     This blog page will include interesting articles.
     </div>
   );
 }
