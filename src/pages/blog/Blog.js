@@ -1,14 +1,11 @@
-import ComingSoon from '../../components/ComingSoon/ComingSoon.js'
+import ComingSoon from "../../components/ComingSoon/ComingSoon.js";
 
-
-function Blog ()
-{  
+function Blog() {
   return (
     <div>
-     <ComingSoon/>         
+      <ComingSoon />
     </div>
   );
 }
-
 
 export default Blog;

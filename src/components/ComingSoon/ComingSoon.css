@@ -31,26 +31,25 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   color: var(--google-white);
 }
 
-
-
 /* Text-Align & Center */
 .center {
-  margin: auto;
-  width: 60%;
-  border: 5px solid var(--google-blue);
-  padding: 10px;
-}
-
-.text-align-center{
+  margin-top: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  padding-top: 60px;
   text-align: center;
 }
 
+.text-align-center {
+  text-align: center;
+}
 
-.text-align-justify{
+.text-align-justify {
   text-align: justify;
 }
 
-.text-align-right{
+.text-align-right {
   text-align: right;
 }
 
@@ -86,5 +85,3 @@ google-text-3: paragraph style
   margin: 0 0 24px;
   text-justify: inter-word;
 }
-
-
