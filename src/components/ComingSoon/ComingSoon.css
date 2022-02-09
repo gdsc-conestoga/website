@@ -1,0 +1,87 @@
+/* 
+https://brandpalettes.com/google-colors/ I decided to use brand colours of google to keep theme consistent - A.N.
+CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-beautiful-css-typography-design/
+*/
+
+:root {
+  --google-blue: #4285f4;
+  --google-red: #db4437;
+  --google-yellow: #f4b400;
+  --google-green: #0f9d58;
+  --google-white: #ffff;
+}
+
+/* Brand Colours */
+.text-google-blue {
+  color: var(--google-blue);
+}
+
+.text-google-red {
+  color: var(--google-red);
+}
+
+.text-google-green {
+  color: var(--google-green);
+}
+.text-google-yellow {
+  color: var(--google-yellow);
+}
+
+.text-google-white {
+  color: var(--google-white);
+}
+
+/* Text-Align & Center */
+.center {
+  margin-top: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+/* Text Formats
+google-text-1: Heading1 style
+google-text-2: Heading2 style
+google-text-3: paragraph style
+*/
+.google-text-1 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* This can be seen as header 2 text format*/
+.google-text-2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+/* Smaller text used for paragraph format */
+.google-text-3 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-justify: inter-word;
+}

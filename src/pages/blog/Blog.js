@@ -1,6 +1,12 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable require-jsdoc */
+import ComingSoon from '../../components/ComingSoon/ComingSoon.js';
+/* Blog */
 function Blog() {
   return (
-    <div>Interesting articles</div>
+    <div>
+      <ComingSoon/>
+    </div>
   );
 }
 
