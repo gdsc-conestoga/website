@@ -11,6 +11,7 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   --google-white: #ffff;
 }
 
+/* Brand Colours */
 .text-google-blue {
   color: var(--google-blue);
 }
@@ -19,6 +20,9 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   color: var(--google-red);
 }
 
+.text-google-green {
+  color: var(--google-green);
+}
 .text-google-yellow {
   color: var(--google-yellow);
 }
@@ -27,11 +31,9 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   color: var(--google-white);
 }
 
-.text-google-green {
-  color: var(--google-green);
-}
 
 
+/* Text-Align & Center */
 .center {
   margin: auto;
   width: 60%;
@@ -52,7 +54,11 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   text-align: right;
 }
 
-/* Header 1 from Google Blue to Google White  */
+/* Text Formats
+google-text-1: Heading1 style
+google-text-2: Heading2 style
+google-text-3: paragraph style
+*/
 .google-text-1 {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 65px;
@@ -62,7 +68,7 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   text-align: center;
 }
 
-/* Header 2 from Google Blue to Google White  */
+/* This can be seen as header 2 text format*/
 .google-text-2 {
   font-family: "Open Sans", sans-serif;
   font-size: 30px;
@@ -72,7 +78,7 @@ CSS Style inspired by Bold by Rafal Tomal https://wdexplorer.com/20-examples-bea
   text-align: center;
 }
 
-/* Paragraph from Google Blue to Google White  */
+/* Smaller text used for paragraph format */
 .google-text-3 {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 18px;

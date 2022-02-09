@@ -1,4 +1,4 @@
-import ComingSoon from "../../components/menu/ComingSoon/ComingSoon";
+import ComingSoon from "../../components/ComingSoon/ComingSoon";
 
 function Calendar() {
   return (

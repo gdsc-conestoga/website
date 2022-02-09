@@ -1,4 +1,4 @@
-import ComingSoon from '../../components/menu/ComingSoon/ComingSoon.js'
+import ComingSoon from '../../components/ComingSoon/ComingSoon.js'
 
 
 function Blog ()
