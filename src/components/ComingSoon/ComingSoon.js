@@ -1,4 +1,4 @@
-import "./ComingSoon.css";
+import './ComingSoon.css';
 
 function ComingSoon() {
   return (
@@ -24,17 +24,17 @@ function ComingSoon() {
         completed soon!
       </h2>
       <p className="google-text-3 text-align-center text-google-green">
-        {" "}
-        If you're interested in seeing our progress you can check our{" "}
+        {' '}
+        If you're interested in seeing our progress you can check our{' '}
         <span>
-          {" "}
+          {' '}
           <a
             className="text-google-yellow"
             href="https://github.com/gdsc-conestoga/website"
           >
-            {" "}
+            {' '}
             GitHub.
-          </a>{" "}
+          </a>{' '}
         </span>
       </p>
     </div>
