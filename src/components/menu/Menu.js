@@ -6,7 +6,7 @@ function Menu() {
   return (
     <div className="menu">
       <Link className="menu-header" to="/">
-        <img src={logo}></img>
+        <img src={logo} alt="gdsc logo"></img>
         <span>GDSC</span>
       </Link>
       <Link className="menu-item" to="/">

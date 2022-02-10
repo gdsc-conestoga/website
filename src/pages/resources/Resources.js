@@ -6,7 +6,7 @@ const showResources = () => {
   return resources.map((resource, idx) => (
     <li key={idx}>
       <div className="image">
-        <img src={resource.logo} alt={resource.name} />
+        <img src={resource.logo} alt={resource.name} rel="noreferrer" />
       </div>
       <div className="header">{resource.name}</div>
       <div>{resource.description}</div>
