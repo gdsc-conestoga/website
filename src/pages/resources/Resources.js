@@ -6,7 +6,7 @@ const showResources = () => {
   return resources.map((resource, idx) => (
     <li key={idx}>
       <div className="image">
-        <img src={resource.logo} alt={resource.name} rel="noreferrer" />
+        <img src={resource.logo} alt={resource.name} />
       </div>
       <div className="header">{resource.name}</div>
       <div>{resource.description}</div>
@@ -14,7 +14,7 @@ const showResources = () => {
         <i class="fa fa-link" aria-hidden="true">
           :
         </i>
-        <a href={resource.link} target="_blank">
+        <a href={resource.link} target="_blank" rel="noreferrer">
           {resource.name}
         </a>
       </div>
