@@ -1,3 +1,44 @@
-.links {
-  display: block;
+.resources_wrapper {
+  height: 100%;
+}
+.top {
+  text-align: center;
+  padding: 4rem;
+}
+.bottom {
+  width: 80%;
+  margin: 0 auto;
+}
+.resourcesList {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  padding: 2rem;
+}
+.resourcesList li {
+  width: 35%;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 0px 9px -2px #5b6372;
+}
+.resourcesList li img {
+  height: 150px;
+  width: 200px;
+  margin: 0 auto;
+}
+.resourcesList li .image {
+  display: flex;
+  margin: 20px 0px;
+}
+.resourcesList li .header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+.resourcesList li .link {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0px;
 }

@@ -1,17 +1,21 @@
 .menu {
-  top: 2rem;
-  left: 2rem;
   display: flex;
-  height: 5vh;
-  border-bottom: 1px solid white;
-  box-sizing: border-box;
+  padding: 1rem 2rem;
+  align-items: center;
 }
-
-.menu-item {
-  flex: 1;
-  text-align: center;
+.menu-header {
+  flex-grow: 1;
   text-decoration: none;
   display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
+  font-size: 2rem;
+}
+.menu-header img {
+  height: 50px;
+  width: 50px;
+}
+.menu-item {
+  margin: 0 1rem;
+  text-decoration: none;
 }
