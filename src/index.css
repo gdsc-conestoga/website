@@ -14,10 +14,6 @@ main {
   background-color: #282c34;
 }
 
-main {
-  height: 95vh;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

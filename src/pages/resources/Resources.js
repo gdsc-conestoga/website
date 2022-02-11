@@ -1,6 +1,6 @@
 import React from "react";
 import "./Resources.css";
-import { resources } from "../../constant";
+import { resources } from "../../utils/constant";
 
 const showResources = () => {
   return resources.map((resource, idx) => (
@@ -29,7 +29,7 @@ const Resources = () => {
         <h1>OUR RESOURCES</h1>
       </div>
       <div className="bottom">
-        <ul className="resourcesList"> {showResources()}</ul>
+        <ul className="resources_list"> {showResources()}</ul>
       </div>
     </div>
   );
