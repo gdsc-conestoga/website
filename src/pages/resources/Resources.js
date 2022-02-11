@@ -2,26 +2,6 @@ import React from "react";
 import "./Resources.css";
 import { resources } from "../../utils/constant";
 
-const showResources = () => {
-  return resources.map((resource, idx) => (
-    <li key={idx}>
-      <div className="image">
-        <img src={resource.logo} alt={resource.name} />
-      </div>
-      <div className="header">{resource.name}</div>
-      <div>{resource.description}</div>
-      <div className="link">
-        <i class="fa fa-link" aria-hidden="true">
-          :
-        </i>
-        <a href={resource.link} target="_blank" rel="noreferrer">
-          {resource.name}
-        </a>
-      </div>
-    </li>
-  ));
-};
-
 const Resources = () => {
   return (
     <div className="resources_wrapper">
@@ -29,7 +9,22 @@ const Resources = () => {
         <h1>OUR RESOURCES</h1>
       </div>
       <div className="bottom">
-        <ul className="resources_list"> {showResources()}</ul>
+        <ul className="resources_list">
+          {resources.map((resource, idx) => (
+            <li key={idx}>
+              <div className="image">
+                <img src={resource.logo} alt={resource.name} />
+              </div>
+              <div className="header">{resource.name}</div>
+              <div>{resource.description}</div>
+              <div className="link">
+                <a href={resource.link} target="_blank" rel="noreferrer">
+                  {resource.name}
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

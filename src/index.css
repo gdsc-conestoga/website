@@ -8,14 +8,15 @@
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+html,
+body,
+#root {
+  height: 100vh;
+}
 
 header,
 main {
   background-color: #282c34;
-}
-
-main {
-  height: 95vh;
 }
 
 code {
