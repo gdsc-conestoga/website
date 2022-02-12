@@ -60,7 +60,6 @@ google-text-2: Heading2 style
 google-text-3: paragraph style
 */
 .google-text-1 {
-  font-family: "Helvetica Neue", sans-serif;
   font-size: 65px;
   font-weight: bold;
   letter-spacing: -1px;
@@ -70,7 +69,6 @@ google-text-3: paragraph style
 
 /* This can be seen as header 2 text format*/
 .google-text-2 {
-  font-family: "Open Sans", sans-serif;
   font-size: 30px;
   font-weight: 300;
   line-height: 32px;
@@ -80,7 +78,6 @@ google-text-3: paragraph style
 
 /* Smaller text used for paragraph format */
 .google-text-3 {
-  font-family: "Helvetica Neue", sans-serif;
   font-size: 18px;
   line-height: 24px;
   margin: 0 0 24px;
