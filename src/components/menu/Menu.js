@@ -5,10 +5,10 @@ import logo from "../../assets/images/logo_GDSC.png";
 function Menu() {
   return (
     <div className="menu">
-      <Link className="menu-header" to="/">
+      {/* <Link className="menu-header" to="/">
         <img src={logo} alt="gdsc logo"></img>
         <span>GDSC</span>
-      </Link>
+      </Link> */}
       <Link className="menu-item" to="/">
         Home
       </Link>

@@ -1,11 +1,11 @@
 import gdscLogo from "../assets/images/logo_GDSC.png";
-import youtubeLogo from "../assets/images/yt_logo_rgb_dark.png";
+import youtubeLogo from "../assets/images/youtube_logo.png";
 import csiLogo from "../assets/images/CSI_LOGO.png";
-import facebookLogo from "../assets/images/facebook_logo.png";
-import githubLogo from "../assets/images/GitHub_logo.png";
-import instagramLogo from "../assets/images/instagram-logo.svg";
-import twitterLogo from "../assets/images/Twitter-Logo.png";
-import linkedinLogo from "../assets/images/Linkedin-Logo.png";
+import facebookLogo from "../assets/images/f_logo_RGB-Blue_1024.png";
+import githubLogo from "../assets/images/GitHub-Mark-120px-plus.png";
+import instagramLogo from "../assets/images/Instagram_Glyph_Gradient_RGB.png";
+import twitterLogo from "../assets/images/twitter_logo.svg";
+import linkedinLogo from "../assets/images/LI-In-Bug.png";
 
 export const resources = [
   {

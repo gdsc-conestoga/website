@@ -26,7 +26,7 @@
 }
 .resources_list li img {
   height: 120px;
-  width: 80%;
+  width: 140px;
   margin: 0 auto;
 }
 .resources_list li .image {
@@ -55,9 +55,5 @@
   }
   .bottom {
     width: 100%;
-  }
-  .resources_list li img {
-    height: 140px;
-    width: 60%;
   }
 }
