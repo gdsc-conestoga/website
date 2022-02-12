@@ -1,6 +1,10 @@
+import ComingSoon from '../../components/ComingSoon/ComingSoon';
+
 function Calendar() {
   return (
-    <div>Upcoming events</div>
+    <div>
+      <ComingSoon/>
+    </div>
   );
 }
 

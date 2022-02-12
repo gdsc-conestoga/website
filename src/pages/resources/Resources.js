@@ -1,21 +1,32 @@
-import ExternalLink from "../../components/externalLink/ExternalLink"
+import React from "react";
+import "./Resources.css";
+import { resources } from "../../utils/constant";
+
+function renderResources(resource, idx) {
+  return (
+    <li key={idx}>
+      <div className="image">
+        <img src={resource.logo} alt={resource.name} />
+      </div>
+      <div className="header">{resource.name}</div>
+      <div>{resource.description}</div>
+      <div className="link">
+        <a href={resource.link} target="_blank" rel="noreferrer">
+          {resource.name}
+        </a>
+      </div>
+    </li>
+  );
+}
 
 function Resources() {
   return (
-    <div>
-      <h1>Useful Resources</h1>
-      <div>The following links might be of interest to club members</div>
-      <br />
-      <div className="links">
-        <ExternalLink 
-          url='https://gdsc.community.dev/conestoga-college-waterloo-campus/' 
-          explanation='GDSC Portal - a place where all of our events are hosted' />
-        <ExternalLink 
-          url='https://conestogastudents.com/2021/09/01/coding-club/' 
-          explanation='CSI Club - register for the official GDSC Conestoga CSI club' />
-        <ExternalLink 
-          url='https://www.youtube.com/channel/UCBbpXl_fLG6dbu25nu2nRNA' 
-          explanation='YouTube - our channel with event recordings' />
+    <div className="resources_wrapper">
+      <div className="top">
+        <h1>OUR RESOURCES</h1>
+      </div>
+      <div className="bottom">
+        <ul className="resources_list">{resources.map(renderResources)}</ul>
       </div>
     </div>
   );
