@@ -1,5 +1,5 @@
 import gdscLogo from "../assets/images/logo_GDSC.png";
-import youtubeLogo from "../assets/images/youtube_logo.png";
+import youtubeLogo from "../assets/images/yt_logo_rgb_dark.png";
 import csiLogo from "../assets/images/CSI_LOGO.png";
 import facebookLogo from "../assets/images/facebook_logo.png";
 import githubLogo from "../assets/images/GitHub_logo.png";

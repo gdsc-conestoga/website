@@ -13,10 +13,7 @@ body,
 #root {
   height: 100vh;
 }
-/* temporary till we add hamburger, its messing with page styling as it was */
-header {
-  overflow: scroll;
-}
+
 header,
 main {
   background-color: #282c34;

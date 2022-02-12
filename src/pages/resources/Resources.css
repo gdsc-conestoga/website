@@ -25,7 +25,7 @@
   box-shadow: 1px 0px 9px -2px #5b6372;
 }
 .resources_list li img {
-  height: 150px;
+  height: 120px;
   width: 80%;
   margin: 0 auto;
 }
@@ -55,5 +55,9 @@
   }
   .bottom {
     width: 100%;
+  }
+  .resources_list li img {
+    height: 140px;
+    width: 60%;
   }
 }
