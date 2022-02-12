@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@font-face {
+  font-family: "ProductSans-Regular";
+  src: local("ProductSans-Regular"),
+    url("./fonts/ProductSans-Regular.woff") format("woff");
+  font-weight: normal;
+}
 
 * {
   color: white;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,'Open Sans', sans-serif;
+  font-family:'ProductSans-Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-header, main {
+header,
+main {
   background-color: #282c34;
 }
 
@@ -21,6 +27,6 @@ main {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
