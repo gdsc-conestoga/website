@@ -1,4 +1,4 @@
-import logo from "./conestoga_GDSC_Logo.png";
+import logo from "../../assets/images/conestoga_GDSC_Logo.png";
 import "./Home.css";
 
 function Home() {
