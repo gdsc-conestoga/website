@@ -1,0 +1,12 @@
+.calendar-container {
+  height: 100vh;
+}
+
+.calendar-container > h1 {
+  text-align: center;
+}
+
+.event {
+  margin: 2rem;
+  padding: 2rem;
+}
