@@ -2,8 +2,18 @@
   height: 100vh;
 }
 
-.calendar-container > h1 {
+.calendar-container h1 {
   text-align: center;
+}
+
+.calendar-container > h2 {
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px 100px;
 }
 
 .event {

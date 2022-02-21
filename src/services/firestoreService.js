@@ -4,10 +4,8 @@ import { getApp } from "firebase/app"
 export async function getEvents() {
   const db = getFirestore(getApp())
   const eventsCollection = collection(db, 'events')
-  console.log({eventsCollection});
 
   const events = await getDocs(eventsCollection)
-  console.log({events});
   
   return events.docs.map(doc => ({
     id: doc.id,
