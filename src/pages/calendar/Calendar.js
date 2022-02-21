@@ -8,7 +8,7 @@ function renderEvent(event) {
     <div key={event.id} className='event'>
       <h2>{event.title}</h2>
       <p>{event.description}</p>
-      {/* <p>{event.startTime.toDateString()}</p> */}
+      <p>{event.startTime && event.startTime.toDate().toDateString()}</p>
       <p>{event.duration}h</p>
     </div>
   )
