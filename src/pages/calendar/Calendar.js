@@ -6,9 +6,7 @@ import { getEvents } from '../../services/firestoreService'
 function renderEvent(event) {
   return (
     <div key={event.id} className='event'>
-      <h2>{event.title}</h2>
-      <p>{event.description}</p>
-      <p>{event.startTime && event.startTime.toDate().toDateString()}</p>
+      <h3>{event.title}</h3>
       <p>{event.duration}h</p>
     </div>
   )
@@ -31,7 +29,7 @@ function Calendar() {
 
   const currentMonth = []
   var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const selectedMonth = months[new Date().getMonth()]
+  const selectedMonth = new Date().getMonth()
   const runningDate = new Date()
 
   for (let date = 1; date <= 28; date++) {
@@ -39,19 +37,32 @@ function Calendar() {
     currentMonth.push(new Date(runningDate))
   }
 
+  if (!events) {
+    return(
+      <div className="calendar-container">
+        <div>Loading...</div>
+      </div>  
+    )
+  }
+
   return (
     <div className="calendar-container">
-      {!events && (<div>Loading...</div>) }
-      
       <h1>Upcoming Events</h1>
-      {events && events.map(renderEvent)}
 
-      <h2>{selectedMonth}</h2>
+      <h2>{months[selectedMonth]}</h2>
       <div className="calendar-grid">
         {
-          currentMonth.map(date => (
-            <div>{date.getDate()}</div>
-          ))
+          currentMonth.map(date => {
+            const event = events.find(e => 
+              e.startTime.toDate().getMonth() === selectedMonth && 
+              e.startTime.toDate().getDate() === date.getDate())
+            return (
+              <div className='calendar-cell' key={date.getDate()}>
+                <div>{date.getDate()}</div>
+                {event && renderEvent(event)}
+              </div>
+            )
+          })
         }
       </div>
     </div>
