@@ -58,7 +58,7 @@ function Calendar() {
               e.startTime.toDate().getDate() === date.getDate())
             return (
               <div className='calendar-cell' key={date.getDate()}>
-                <div>{date.getDate()}</div>
+                <div className='calendar-cell-date'>{date.getDate()}</div>
                 {event && renderEvent(event)}
               </div>
             )

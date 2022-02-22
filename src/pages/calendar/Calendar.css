@@ -1,5 +1,6 @@
 .calendar-container {
   min-height: 100vh;
+  padding: 2rem;
 }
 
 .calendar-container h1 {
@@ -13,10 +14,14 @@
 .calendar-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
 }
 
 .calendar-cell {
   border: 1px solid white;
   padding: 0.25rem;
+}
+
+.calendar-cell-date {
+  text-align: right;
 }
