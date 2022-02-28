@@ -1,3 +1,12 @@
+.new-event {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
 .calendar-container {
   min-height: 100vh;
   padding: 2rem;

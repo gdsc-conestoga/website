@@ -27,6 +27,10 @@ function Calendar() {
     []
   )
 
+  const openEventModal = () => {
+    console.log('Opening modal...');
+  }
+
   const currentMonth = []
   var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const selectedMonth = new Date().getMonth()
@@ -50,6 +54,9 @@ function Calendar() {
       <h1>Upcoming Events</h1>
 
       <h2>{months[selectedMonth]}</h2>
+
+      <button class="new-event" onClick={openEventModal}>+</button>
+
       <div className="calendar-grid">
         {
           currentMonth.map(date => {
