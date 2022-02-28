@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 import PageNotFound from "./pages/404/404";
 import Menu from "./components/menu/Menu";
 import { initializeApp } from "firebase/app";
+import Modal from 'react-modal'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
@@ -22,6 +23,8 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+Modal.setAppElement('#modal');
 
 ReactDOM.render(
   <React.StrictMode>

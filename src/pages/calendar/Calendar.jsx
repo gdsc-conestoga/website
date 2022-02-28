@@ -2,6 +2,7 @@ import './Calendar.css'
 
 import { useEffect, useState } from 'react'
 import { getEvents } from '../../services/firestoreService'
+import Modal from 'react-modal';
 
 function renderEvent(event) {
   return (
@@ -14,6 +15,13 @@ function renderEvent(event) {
 
 function Calendar() {
   const [events, setEvents] = useState(null)
+  const [modalOpen, setModalOpen] = useState(true)
+
+  const customStyles = {
+    content: {
+      background: 'black'
+    }
+  }
 
   useEffect(
     () => {
@@ -27,8 +35,12 @@ function Calendar() {
     []
   )
 
-  const openEventModal = () => {
-    console.log('Opening modal...');
+  const openEventModal = () => setModalOpen(true)
+  const closeEventModal = () => setModalOpen(false)
+
+  const handleCreateEventFormSubmit = (e) => {
+    console.log(e)
+    closeEventModal()
   }
 
   const currentMonth = []
@@ -55,7 +67,7 @@ function Calendar() {
 
       <h2>{months[selectedMonth]}</h2>
 
-      <button class="new-event" onClick={openEventModal}>+</button>
+      <button className="new-event" onClick={openEventModal}>+</button>
 
       <div className="calendar-grid">
         {
@@ -72,6 +84,23 @@ function Calendar() {
           })
         }
       </div>
+
+      <Modal 
+        isOpen={modalOpen} 
+        onRequestClose={closeEventModal}
+        style={customStyles}>
+        
+        <form onSubmit={handleCreateEventFormSubmit}>
+          <label for="title">Title</label><br/>
+          <input id="title" name="title" type="text" />
+          <input id="description" type="textarea" />
+          <input type="number" />
+          <input type="date" />
+
+          <button type="submit">Create Event</button>
+        </form>
+
+      </Modal>
     </div>
   );
 }
