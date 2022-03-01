@@ -3,6 +3,7 @@ import './Calendar.css'
 import { useEffect, useState } from 'react'
 import { getEvents } from '../../services/firestoreService'
 import Modal from 'react-modal';
+import InputField from '../../components/inputField/InputField'
 
 function renderEvent(event) {
   return (
@@ -91,11 +92,10 @@ function Calendar() {
         style={customStyles}>
         
         <form onSubmit={handleCreateEventFormSubmit}>
-          <label for="title">Title</label><br/>
-          <input id="title" name="title" type="text" />
-          <input id="description" type="textarea" />
-          <input type="number" />
-          <input type="date" />
+          <InputField id="title" label="Title" type="text" />
+          <InputField id="description" label="Description" type="textarea" />
+          <InputField id="duration" label="Duration" type="number" />
+          <InputField id="date" label="Date" type="date" />
 
           <button type="submit">Create Event</button>
         </form>
