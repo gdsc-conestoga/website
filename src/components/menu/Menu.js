@@ -11,27 +11,37 @@ function Menu() {
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
       <div className='logo'>
-        <img src='./logo_GDSC.png' alt='GDSC' />
+        <img src='./logo.png' alt='GDSC' />
       </div>
       <ul className='nav'>
         <li className={`menu-item ${pathname === '/' ? 'active' : ''}`}>
-          <Link to='/'>Home</Link>
+          <Link to='/' onClick={() => setToggle(false)}>
+            Home
+          </Link>
         </li>
         <li
           className={`menu-item ${pathname === '/resources' ? 'active' : ''}`}>
-          <Link to='/resources'>Resources</Link>
+          <Link to='/resources' onClick={() => setToggle(false)}>
+            Resources
+          </Link>
         </li>
         <li className={`menu-item ${pathname === '/calendar' ? 'active' : ''}`}>
-          <Link to='/calendar'>Calendar</Link>
+          <Link to='/calendar' onClick={() => setToggle(false)}>
+            Calendar
+          </Link>
         </li>
         <li className={`menu-item ${pathname === '/blog' ? 'active' : ''}`}>
-          <Link to='/blog'>Blog</Link>
+          <Link to='/blog' onClick={() => setToggle(false)}>
+            Blog
+          </Link>
         </li>
       </ul>
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
-        <span className='line line_1'></span>
-        <span className='line line_2'></span>
-        <span className='line line_3'></span>
+        {toggle ? (
+          <img src='/close.svg' alt='Menu' />
+        ) : (
+          <img src='/menu.svg' alt='Menu' />
+        )}
       </div>
     </div>
   );
