@@ -2,8 +2,16 @@
   display: flex;
   padding: 1rem 2rem;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
+
+.logo {
+  width: 75px;
+  height: 40px;
+}
+
+.logo img{ width: 100%; height: auto; }
+
 .menu-header {
   flex-grow: 1;
   text-decoration: none;
@@ -12,11 +20,55 @@
   align-items: center;
   font-size: 2rem;
 }
-.menu-header img {
-  height: 50px;
-  width: 50px;
+
+.nav {
+  display: flex;
+  align-items: center;
 }
+
 .menu-item {
   margin: 0 1rem;
   text-decoration: none;
+}
+
+.active a{
+ text-decoration: underline;
+}
+
+.hamburger{
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .menu{
+    padding: 1rem;
+  }
+  .activehamburger .nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    left: 0px;
+    padding: 0px;
+  }
+  .nav {
+   display: none;
+  }
+
+  .menu-item{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    background: #181818;
+    border-bottom: 1px solid #3d3c3c;
+    margin:0px;
+  }
+  .hamburger{
+    display: flex;
+  }
+
 }
