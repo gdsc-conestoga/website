@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore"
 import { getApp } from "firebase/app"
 
 export async function getEvents() {
@@ -14,4 +14,10 @@ export async function getEvents() {
     duration: doc.data()['duration'],
     startTime: doc.data()['startTime']
   }))
+}
+
+export async function addEvent(event) {
+  const db = getFirestore(getApp())
+  const eventsCollection = collection(db, 'events')
+  await addDoc(eventsCollection, event)
 }

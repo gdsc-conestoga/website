@@ -1,7 +1,7 @@
 import './Calendar.css'
 
 import { useEffect, useState } from 'react'
-import { getEvents } from '../../services/firestoreService'
+import { addEvent, getEvents } from '../../services/firestoreService'
 import Modal from 'react-modal';
 import InputField from '../../components/inputField/InputField'
 import CustomButton from '../../components/customButton/customButton'
@@ -40,7 +40,7 @@ function Calendar() {
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
 
-  const handleCreateEventFormSubmit = (e) => {
+  const handleCreateEventFormSubmit = async (e) => {
     e.preventDefault()
     const newEvent = {
       title: e.target.title.value,
@@ -48,7 +48,7 @@ function Calendar() {
       duration: +e.target.duration.value,
       startTime: new Date(e.target.startTime.value)
     }
-    console.log(newEvent);
+    await addEvent(newEvent)
     closeEventModal()
   }
 
