@@ -34,18 +34,6 @@ function Calendar() {
     return () => unsubscribe()
   }, [])
 
-  // useEffect(
-  //   () => {
-  //     async function loadEvents() {
-  //       const firestoreEvents = await getEvents()
-        
-  //     }
-
-  //     loadEvents()
-  //   }, 
-  //   []
-  // )
-
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
 
