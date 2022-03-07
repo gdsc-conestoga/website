@@ -1,10 +1,11 @@
 import './Calendar.css'
 
 import { useEffect, useState } from 'react'
-import { addEvent, getEvents } from '../../services/firestoreService'
+import { addEvent, getEvents, listenToEvents } from '../../services/firestoreService'
 import Modal from 'react-modal';
 import InputField from '../../components/inputField/InputField'
 import CustomButton from '../../components/customButton/customButton'
+import { useCallback } from 'react/cjs/react.production.min'
 
 function renderEvent(event) {
   return (
@@ -17,7 +18,7 @@ function renderEvent(event) {
 
 function Calendar() {
   const [events, setEvents] = useState(null)
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const customStyles = {
     content: {
@@ -25,17 +26,25 @@ function Calendar() {
     }
   }
 
-  useEffect(
-    () => {
-      async function loadEvents() {
-        const firestoreEvents = await getEvents()
-        setEvents(firestoreEvents)
-      }
+  useEffect(() => {
+    const unsubscribe = listenToEvents((events) => {
+      setEvents(events)
+    })
 
-      loadEvents()
-    }, 
-    []
-  )
+    return () => unsubscribe()
+  }, [])
+
+  // useEffect(
+  //   () => {
+  //     async function loadEvents() {
+  //       const firestoreEvents = await getEvents()
+        
+  //     }
+
+  //     loadEvents()
+  //   }, 
+  //   []
+  // )
 
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
