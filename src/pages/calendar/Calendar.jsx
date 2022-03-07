@@ -41,7 +41,14 @@ function Calendar() {
   const closeEventModal = () => setModalOpen(false)
 
   const handleCreateEventFormSubmit = (e) => {
-    console.log(e)
+    e.preventDefault()
+    const newEvent = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+      duration: +e.target.duration.value,
+      startTime: new Date(e.target.startTime.value)
+    }
+    console.log(newEvent);
     closeEventModal()
   }
 
@@ -96,7 +103,7 @@ function Calendar() {
           <InputField id="title" label="Title" type="text" />
           <InputField id="description" label="Description" type="textarea" />
           <InputField id="duration" label="Duration" type="number" />
-          <InputField id="date" label="Date" type="date" />
+          <InputField id="startTime" label="Date" type="date" />
 
           <CustomButton type="submit" buttonText='Create Event' />
         </form>
