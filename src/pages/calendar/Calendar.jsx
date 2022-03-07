@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { getEvents } from '../../services/firestoreService'
 import Modal from 'react-modal';
 import InputField from '../../components/inputField/InputField'
+import CustomButton from '../../components/customButton/customButton'
 
 function renderEvent(event) {
   return (
@@ -68,7 +69,7 @@ function Calendar() {
 
       <h2>{months[selectedMonth]}</h2>
 
-      <button className="new-event" onClick={openEventModal}>+</button>
+      <CustomButton onClick={openEventModal} type="button" buttonText='+' />
 
       <div className="calendar-grid">
         {
@@ -97,7 +98,7 @@ function Calendar() {
           <InputField id="duration" label="Duration" type="number" />
           <InputField id="date" label="Date" type="date" />
 
-          <button type="submit">Create Event</button>
+          <CustomButton type="submit" buttonText='Create Event' />
         </form>
 
       </Modal>
