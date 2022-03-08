@@ -1,11 +1,9 @@
-import './Calendar.css'
-
 import { useEffect, useState } from 'react'
-import { addEvent, getEvents, listenToEvents } from '../../services/firestoreService'
-import Modal from 'react-modal';
-import InputField from '../../components/inputField/InputField'
+import Modal from 'react-modal'
 import CustomButton from '../../components/customButton/customButton'
-import { useCallback } from 'react/cjs/react.production.min'
+import InputField from '../../components/inputField/InputField'
+import { addEvent, listenToEvents } from '../../services/firestoreService'
+import './Calendar.css'
 
 function renderEvent(event) {
   return (
