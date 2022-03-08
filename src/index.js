@@ -9,6 +9,22 @@ import Blog from "./pages/blog/Blog";
 import Home from "./pages/home/Home";
 import PageNotFound from "./pages/404/404";
 import Menu from "./components/menu/Menu";
+import { initializeApp } from "firebase/app";
+import Modal from 'react-modal'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
+  authDomain: "gdsc-conestoga.firebaseapp.com",
+  projectId: "gdsc-conestoga",
+  storageBucket: "gdsc-conestoga.appspot.com",
+  messagingSenderId: "744727488876",
+  appId: "1:744727488876:web:95a3467337021f8fd7ab49",
+  measurementId: "G-E1MNYW2RZ2"
+};
+
+initializeApp(firebaseConfig);
+
+Modal.setAppElement('#modal');
 
 ReactDOM.render(
   <React.StrictMode>
