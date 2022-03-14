@@ -4,11 +4,20 @@ import { useLocation } from 'react-router-dom';
 import { logIn } from '../../services/authService'
 import CustomButton from '../customButton/customButton'
 import './Menu.css';
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 function Menu() {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const { pathname } = location;
+
+  const [user, setUser] = useState(null)
+
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    console.log(user);
+    setUser(user)
+  });
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
@@ -37,7 +46,9 @@ function Menu() {
             Blog
           </Link>
         </li>
-        <CustomButton buttonText='Log In' onClick={logIn} />
+        {
+          user ? user.email : <CustomButton buttonText='Log In' onClick={logIn} />
+        }
       </ul>
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
         {toggle ? (

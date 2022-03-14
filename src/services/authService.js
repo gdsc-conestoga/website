@@ -6,7 +6,6 @@ export async function logIn() {
   const auth = getAuth();
   try {
     const result = await signInWithRedirect(auth, provider)
-    console.log(result.user);
     return result.user
   } catch (error) {
     const errorCode = error.code;
