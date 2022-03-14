@@ -1,4 +1,4 @@
-import { GithubAuthProvider, getAuth, signInWithRedirect } from "firebase/auth";
+import { GithubAuthProvider, getAuth, signInWithRedirect, signOut } from "firebase/auth";
 
 export async function logIn() {
   const provider = new GithubAuthProvider();
@@ -12,4 +12,9 @@ export async function logIn() {
     const errorMessage = error.message;
     console.error({ errorCode, errorMessage });
   }
+}
+
+export async function logOut() {
+  const auth = getAuth();
+  signOut(auth)
 }

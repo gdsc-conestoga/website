@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import { logIn } from '../../services/authService'
-import CustomButton from '../customButton/customButton'
-import './Menu.css';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { logIn, logOut } from '../../services/authService'
+import CustomButton from '../customButton/customButton'
+import './Menu.css'
 
 function Menu() {
   const [toggle, setToggle] = useState(false);
@@ -14,10 +13,14 @@ function Menu() {
   const [user, setUser] = useState(null)
 
   const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
+  // useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
     console.log(user);
     setUser(user)
   });
+
+  //   return () => unsubscribe()
+  // }, [auth])
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
@@ -47,7 +50,9 @@ function Menu() {
           </Link>
         </li>
         {
-          user ? user.email : <CustomButton buttonText='Log In' onClick={logIn} />
+          user 
+            ? <img src={user.photoURL} alt='Profile' className='profile-image' onClick={logOut} />
+            : <CustomButton buttonText='Log In' onClick={logIn} />
         }
       </ul>
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
