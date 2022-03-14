@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { logIn } from '../../services/authService'
+import CustomButton from '../customButton/customButton'
 import './Menu.css';
 
 function Menu() {
@@ -35,6 +37,7 @@ function Menu() {
             Blog
           </Link>
         </li>
+        <CustomButton buttonText='Log In' onClick={logIn} />
       </ul>
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
         {toggle ? (
