@@ -11,6 +11,7 @@ import PageNotFound from "./pages/404/404";
 import Menu from "./components/menu/Menu";
 import { initializeApp } from "firebase/app";
 import Modal from 'react-modal'
+import { getAuth, connectAuthEmulator } from "firebase/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
@@ -23,6 +24,9 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+const auth = getAuth()
+connectAuthEmulator(auth, "http://localhost:9099");
+
 
 Modal.setAppElement('#modal');
 
