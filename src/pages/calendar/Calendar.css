@@ -14,7 +14,9 @@
 .calendar-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
+  grid-template-rows:
+    minmax(100px, auto) minmax(100px, auto) minmax(100px, auto)
+    minmax(100px, auto);
 }
 
 .calendar-cell {
@@ -24,4 +26,11 @@
 
 .calendar-cell-date {
   text-align: right;
+}
+.deleteEvent {
+  display: flex;
+  justify-content: flex-end;
+}
+.deleteEvent svg {
+  cursor: pointer;
 }
