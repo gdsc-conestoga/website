@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import './Menu.css';
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import CustomButton from '../customButton/customButton'
+import './Menu.css'
 
-function Menu() {
+function Menu({ onThemeChanged }) {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const { pathname } = location;
@@ -36,6 +36,7 @@ function Menu() {
           </Link>
         </li>
       </ul>
+      <CustomButton onClick={onThemeChanged} buttonText='Change theme' />
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
         {toggle ? (
           <img src='/close.svg' alt='Menu' />
