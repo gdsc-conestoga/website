@@ -1,7 +1,7 @@
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { logIn, logOut } from '../../services/authService'
+import { useUser } from '../../utils/hooks'
 import CustomButton from '../customButton/customButton'
 import './Menu.css'
 
@@ -10,17 +10,7 @@ function Menu() {
   const location = useLocation();
   const { pathname } = location;
 
-  const [user, setUser] = useState(null)
-
-  const auth = getAuth();
-  // useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    console.log(user);
-    setUser(user)
-  });
-
-  //   return () => unsubscribe()
-  // }, [auth])
+  const user = useUser()
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
