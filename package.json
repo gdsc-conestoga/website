@@ -12,6 +12,7 @@
     "react-modal": "^3.14.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

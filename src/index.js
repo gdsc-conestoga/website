@@ -11,6 +11,7 @@ import PageNotFound from "./pages/404/404";
 import Menu from "./components/menu/Menu";
 import { initializeApp } from "firebase/app";
 import Modal from 'react-modal'
+import { ThemeProvider } from "./components/ThemeProvider"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
@@ -28,20 +29,22 @@ Modal.setAppElement('#modal');
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <header>
-        <Menu />
-      </header>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/*" element={<PageNotFound />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <header>
+          <Menu />
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

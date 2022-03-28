@@ -5,8 +5,18 @@
   font-weight: normal;
 }
 
+:root {
+  --background: white;
+  --text-primary: black;
+}
+
+[data-theme='dark'] {
+  --background: #282c34;
+  --text-primary: white;
+}
+
 * {
-  color: white;
+  color: var(--text-primary);
   margin: 0;
   font-family:'ProductSans-Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,9 +30,8 @@ body,
   height: 100vh;
 }
 
-header,
-main {
-  background-color: #282c34;
+header, main {
+  background-color: var(--background);
 }
 
 code {
