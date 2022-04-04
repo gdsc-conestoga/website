@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +16,7 @@
     "react-modal": "^3.14.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

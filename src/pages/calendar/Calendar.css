@@ -18,7 +18,7 @@
 }
 
 .calendar-cell {
-  border: 1px solid white;
+  border: 1px solid var(--text-primary);
   padding: 0.25rem;
 }
 

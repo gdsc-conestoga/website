@@ -9,8 +9,11 @@
 }
 
 .Home-logo {
-  height: 40vmin;
+  margin-bottom: 2rem;
+  /* height: 40vmin; */
+  width: 80vw;
   pointer-events: none;
+  background-color: rgba(100, 100, 100, 0.4);
 }
 
 .description {
