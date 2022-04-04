@@ -26,10 +26,13 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-const auth = getAuth()
-connectAuthEmulator(auth, "http://localhost:9099");
-const firestore = getFirestore()
-connectFirestoreEmulator(firestore, 'localhost', '8080')
+console.log('Mode: ', process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'development') {
+  const auth = getAuth()
+  connectAuthEmulator(auth, "http://localhost:9099");
+  const firestore = getFirestore()
+  connectFirestoreEmulator(firestore, 'localhost', '8080')
+}
 
 Modal.setAppElement('#modal');
 
