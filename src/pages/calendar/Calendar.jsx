@@ -19,7 +19,6 @@ function Calendar() {
   const user = useUser()
   const [events, setEvents] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(false)
 
   const customStyles = {
     content: {
@@ -34,17 +33,7 @@ function Calendar() {
 
     return () => unsubscribe()
   }, [])
-
-  useEffect(() => {
-    if (!user) setIsAdmin(false)
-
-    (async () => {
-      const data = await user.getIdTokenResult()
-      console.log('claims', data);
-      setIsAdmin(data?.claims?.admin)
-    })()
-  }, [user])
-
+  
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
 
@@ -84,7 +73,7 @@ function Calendar() {
 
       <h2>{months[selectedMonth]}</h2>
 
-      {user && isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
+      {user?.isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
 
       <div className="calendar-grid">
         {

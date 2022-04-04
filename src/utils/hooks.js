@@ -5,8 +5,14 @@ export function useUser() {
   const [user, setUser] = useState(null)
 
   const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    console.log(user);
+  onAuthStateChanged(auth, async (user) => {
+    console.log({user});
+    
+    if (user) {
+      const data = await user.getIdTokenResult(true)
+      user.isAdmin = !!data?.claims?.admin
+    }
+
     setUser(user)
   });
 
