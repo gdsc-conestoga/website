@@ -21,6 +21,10 @@
   font-size: 2rem;
 }
 
+.nav-group {
+  display: flex;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -63,7 +67,7 @@
     width: 100%;
     text-align: center;
     padding: 20px 0px;
-    background: #181818;
+    background: var(--background);
     border-bottom: 1px solid #3d3c3c;
     margin:0px;
   }

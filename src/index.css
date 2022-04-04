@@ -34,6 +34,12 @@ header, main {
   background-color: var(--background);
 }
 
+header {
+  position: sticky;
+  top: 0;
+  box-shadow: 1px 0px 9px -2px #5b6372;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
