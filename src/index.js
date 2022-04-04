@@ -5,6 +5,8 @@ import Modal from 'react-modal'
 import { ThemeProvider } from "./components/ThemeProvider"
 import "./index.css"
 import reportWebVitals from "./reportWebVitals"
+import { getAuth, connectAuthEmulator } from "firebase/auth"
+import { connectFirestoreEmulator, getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
@@ -17,6 +19,14 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+console.log('Mode: ', process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'development') {
+  const auth = getAuth()
+  connectAuthEmulator(auth, "http://localhost:9099");
+  const firestore = getFirestore()
+  connectFirestoreEmulator(firestore, 'localhost', '8080')
+}
 
 Modal.setAppElement('#modal');
 

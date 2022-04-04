@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import CustomButton from '../../components/customButton/customButton'
 import InputField from '../../components/inputField/InputField'
 import { addEvent, listenToEvents } from '../../services/firestoreService'
+import { useUser } from '../../utils/hooks'
 import './Calendar.css'
 
 function renderEvent(event) {
@@ -15,6 +16,7 @@ function renderEvent(event) {
 }
 
 function Calendar() {
+  const user = useUser()
   const [events, setEvents] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -31,7 +33,7 @@ function Calendar() {
 
     return () => unsubscribe()
   }, [])
-
+  
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
 
@@ -71,7 +73,7 @@ function Calendar() {
 
       <h2>{months[selectedMonth]}</h2>
 
-      <CustomButton onClick={openEventModal} type="button" buttonText='+' />
+      {user?.isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
 
       <div className="calendar-grid">
         {
