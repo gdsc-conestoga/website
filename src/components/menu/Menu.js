@@ -1,12 +1,16 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import './Menu.css';
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { logIn, logOut } from '../../services/authService'
+import { useUser } from '../../utils/hooks'
+import CustomButton from '../customButton/customButton'
+import './Menu.css'
 
 function Menu() {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const { pathname } = location;
+
+  const user = useUser()
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
@@ -35,6 +39,11 @@ function Menu() {
             Blog
           </Link>
         </li>
+        {
+          user 
+            ? <img src={user.photoURL} alt='Profile' className='profile-image' onClick={logOut} />
+            : <CustomButton buttonText='Log In' onClick={logIn} />
+        }
       </ul>
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
         {toggle ? (

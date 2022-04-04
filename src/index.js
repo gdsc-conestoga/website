@@ -11,6 +11,8 @@ import PageNotFound from "./pages/404/404";
 import Menu from "./components/menu/Menu";
 import { initializeApp } from "firebase/app";
 import Modal from 'react-modal'
+import { getAuth, connectAuthEmulator } from "firebase/auth"
+import { connectFirestoreEmulator, getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHV3ZQEJeMZG_WwPNrQuqS46MCCvyw1ms",
@@ -23,6 +25,14 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+console.log('Mode: ', process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'development') {
+  const auth = getAuth()
+  connectAuthEmulator(auth, "http://localhost:9099");
+  const firestore = getFirestore()
+  connectFirestoreEmulator(firestore, 'localhost', '8080')
+}
 
 Modal.setAppElement('#modal');
 

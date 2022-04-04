@@ -42,6 +42,11 @@
   height: 40px;
 }
 
+.profile-image {
+  height: 40px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 500px) {
   .menu{
     padding: 1rem;
