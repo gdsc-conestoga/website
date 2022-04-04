@@ -4,7 +4,7 @@ import Calendar from "../pages/calendar/Calendar";
 import Blog from "../pages/blog/Blog";
 import Home from "../pages/home/Home";
 import PageNotFound from "../pages/404/404";
-import Menu from "./menu/Menu";
+import Menu from "./Menu/Menu";
 import useLocalStorage from "use-local-storage"
 
 export function ThemeProvider() {

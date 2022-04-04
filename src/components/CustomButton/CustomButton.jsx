@@ -1,4 +1,4 @@
-import './customButton.css'
+import './CustomButton.css'
 
 export default function CustomButton({ buttonText, ...args }) {
   return (
