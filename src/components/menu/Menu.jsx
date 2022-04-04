@@ -1,51 +1,56 @@
-import Close from '@mui/icons-material/Close'
-import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
+import { logIn, logOut } from '../../services/authService'
+import { useUser } from '../../utils/hooks'
+import CustomButton from '../customButton/customButton'
 import './Menu.css'
 
-function Menu({ theme, onThemeChanged }) {
+function Menu() {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const { pathname } = location;
+
+  const user = useUser()
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
       <div className='logo'>
         <img src='./logo.png' alt='GDSC' />
       </div>
-
-      <div className='nav-group'>
-        <ul className='nav'>
-          <li className={`menu-item ${pathname === '/' ? 'active' : ''}`}>
-            <Link to='/' onClick={() => setToggle(false)}>
-              Home
-            </Link>
-          </li>
-          <li
-            className={`menu-item ${pathname === '/resources' ? 'active' : ''}`}>
-            <Link to='/resources' onClick={() => setToggle(false)}>
-              Resources
-            </Link>
-          </li>
-          <li className={`menu-item ${pathname === '/calendar' ? 'active' : ''}`}>
-            <Link to='/calendar' onClick={() => setToggle(false)}>
-              Calendar
-            </Link>
-          </li>
-          <li className={`menu-item ${pathname === '/blog' ? 'active' : ''}`}>
-            <Link to='/blog' onClick={() => setToggle(false)}>
-              Blog
-            </Link>
-          </li>
-        </ul>
-        
-        <div className='hamburger' onClick={() => setToggle(!toggle)}>
-          {toggle ? <Close fontSize='large' /> : <MenuIcon fontSize='large' />}
-        </div>
-
-        <ThemeSwitcher theme={theme} onThemeChanged={onThemeChanged} />
+      <ul className='nav'>
+        <li className={`menu-item ${pathname === '/' ? 'active' : ''}`}>
+          <Link to='/' onClick={() => setToggle(false)}>
+            Home
+          </Link>
+        </li>
+        <li
+          className={`menu-item ${pathname === '/resources' ? 'active' : ''}`}>
+          <Link to='/resources' onClick={() => setToggle(false)}>
+            Resources
+          </Link>
+        </li>
+        <li className={`menu-item ${pathname === '/calendar' ? 'active' : ''}`}>
+          <Link to='/calendar' onClick={() => setToggle(false)}>
+            Calendar
+          </Link>
+        </li>
+        <li className={`menu-item ${pathname === '/blog' ? 'active' : ''}`}>
+          <Link to='/blog' onClick={() => setToggle(false)}>
+            Blog
+          </Link>
+        </li>
+        {
+          user 
+            ? <img src={user.photoURL} alt='Profile' className='profile-image' onClick={logOut} />
+            : <CustomButton buttonText='Log In' onClick={logIn} />
+        }
+      </ul>
+      <div className='hamburger' onClick={() => setToggle(!toggle)}>
+        {toggle ? (
+          <img src='/close.svg' alt='Menu' />
+        ) : (
+          <img src='/menu.svg' alt='Menu' />
+        )}
       </div>
     </div>
   );
