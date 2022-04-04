@@ -17,7 +17,7 @@ export function ThemeProvider() {
   return <div data-theme={theme}>
     <BrowserRouter>
       <header>
-        <Menu onThemeChanged={switchTheme} />
+        <Menu theme={theme} onThemeChanged={switchTheme} />
       </header>
       <main>
         <Routes>

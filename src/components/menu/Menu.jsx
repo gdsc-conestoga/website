@@ -1,9 +1,10 @@
+import DarkMode from '@mui/icons-material/DarkMode'
+import LightMode from '@mui/icons-material/LightMode'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import CustomButton from '../customButton/customButton'
 import './Menu.css'
 
-function Menu({ onThemeChanged }) {
+function Menu({ theme, onThemeChanged }) {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const { pathname } = location;
@@ -36,7 +37,9 @@ function Menu({ onThemeChanged }) {
           </Link>
         </li>
       </ul>
-      <CustomButton onClick={onThemeChanged} buttonText='Change theme' />
+      { theme === 'dark' 
+          ? <LightMode onClick={onThemeChanged} cursor='pointer' /> 
+          : <DarkMode onClick={onThemeChanged} cursor='pointer' /> }
       <div className='hamburger' onClick={() => setToggle(!toggle)}>
         {toggle ? (
           <img src='/close.svg' alt='Menu' />
