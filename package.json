@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "emulate": "firebase emulators:start"
+    "emulate": "firebase emulators:start --import emulator_data"
   },
   "eslintConfig": {
     "extends": [
