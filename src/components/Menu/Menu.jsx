@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import Close from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './Menu.css'
 import Account from '../Account/Account'
+import NavItem from './NavItem/NavItem'
 
 function Menu({ theme, onThemeChanged }) {
   const [toggle, setToggle] = useState(false);
-  const location = useLocation();
-  const { pathname } = location;
 
   return (
     <div className={`menu ${toggle ? 'activehamburger' : ''}`}>
@@ -19,33 +17,14 @@ function Menu({ theme, onThemeChanged }) {
 
       <div className="nav-group">
         <ul className='nav'>
-          <li className={`menu-item ${pathname === '/' ? 'active' : ''}`}>
-            <Link to='/' onClick={() => setToggle(false)}>
-              Home
-            </Link>
-          </li>
-          <li
-            className={`menu-item ${pathname === '/resources' ? 'active' : ''}`}>
-            <Link to='/resources' onClick={() => setToggle(false)}>
-              Resources
-            </Link>
-          </li>
-          <li className={`menu-item ${pathname === '/calendar' ? 'active' : ''}`}>
-            <Link to='/calendar' onClick={() => setToggle(false)}>
-              Calendar
-            </Link>
-          </li>
-          <li className={`menu-item ${pathname === '/blog' ? 'active' : ''}`}>
-            <Link to='/blog' onClick={() => setToggle(false)}>
-              Blog
-            </Link>
-          </li>
+          <NavItem label='Home' path='/' onSelect={() => setToggle(false)} />
+          <NavItem label='Resources' path='/resources' onSelect={() => setToggle(false)} />
+          <NavItem label='Calendar' path='/calendar' onSelect={() => setToggle(false)} />
+          <NavItem label='Blog' path='/blog' onSelect={() => setToggle(false)} />
         </ul>
 
-        <div>
-          <ThemeSwitcher theme={theme} onThemeChanged={onThemeChanged} />
-          <Account />
-        </div>
+        <ThemeSwitcher theme={theme} onThemeChanged={onThemeChanged} className='menu-item' />
+        <Account className='menu-item' />
 
         <div className='hamburger' onClick={() => setToggle(!toggle)}>
           {toggle ? <Close fontSize='large' /> : <MenuIcon fontSize='large' />}
