@@ -31,6 +31,10 @@
 }
 
 .menu-item {
+  margin: 0 0.5rem;
+}
+
+.nav-item {
   margin: 0 1rem;
   text-decoration: none;
 }
@@ -55,6 +59,7 @@
   .menu{
     padding: 1rem;
   }
+
   .activehamburger .nav {
     display: flex;
     flex-direction: column;
@@ -64,11 +69,12 @@
     left: 0px;
     padding: 0px;
   }
+
   .nav {
    display: none;
   }
 
-  .menu-item{
+  .nav-item{
     width: 100%;
     text-align: center;
     padding: 20px 0px;
@@ -76,6 +82,12 @@
     border-bottom: 1px solid #3d3c3c;
     margin:0px;
   }
+
+  .menu-item {
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+
   .hamburger{
     display: flex;
   }

@@ -5,16 +5,13 @@ import { resources } from "../../utils/constant";
 function renderResources(resource, idx) {
   return (
     <li key={idx}>
-      <div className="image">
-        <img src={resource.logo} alt={resource.name} />
-      </div>
-      <div className="header">{resource.name}</div>
-      <div>{resource.description}</div>
-      <div className="link">
-        <a href={resource.link} target="_blank" rel="noreferrer">
-          {resource.name}
-        </a>
-      </div>
+      <a href={resource.link} target="_blank" rel="noreferrer" className="link">
+        <div className="image">
+          <img src={resource.logo} alt={resource.name} />
+        </div>
+        <div className="header">{resource.name}</div>
+        <div>{resource.description}</div>
+      </a>
     </li>
   );
 }
