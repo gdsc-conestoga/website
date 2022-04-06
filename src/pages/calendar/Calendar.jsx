@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-// import Modal from 'react-modal'
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CustomButton from '../../components/CustomButton/CustomButton'
@@ -23,12 +21,6 @@ function Calendar() {
   const user = useUser()
   const [events, setEvents] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
-
-  // const customStyles = {
-  //   content: {
-  //     background: 'black'
-  //   }
-  // }
 
   const style = {
     position: 'absolute',
@@ -91,7 +83,6 @@ function Calendar() {
 
       {user?.isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
 
-      <CustomButton onClick={openEventModal} type="button" buttonText='+' />
       <div className="calendar-grid">
         {
           currentMonth.map(date => {
@@ -131,22 +122,6 @@ function Calendar() {
           </form>
         </Box>
       </Modal>
-
-      {/* <Modal
-        isOpen={modalOpen}
-        onRequestClose={closeEventModal}
-        style={customStyles}>
-
-        <form onSubmit={handleCreateEventFormSubmit}>
-          <InputField id="title" label="Title" type="text" />
-          <InputField id="description" label="Description" type="textarea" />
-          <InputField id="duration" label="Duration" type="number" />
-          <InputField id="startTime" label="Date" type="date" />
-
-          <CustomButton type="submit" buttonText='Create Event' />
-        </form>
-
-      </Modal> */}
     </div>
   );
 }
