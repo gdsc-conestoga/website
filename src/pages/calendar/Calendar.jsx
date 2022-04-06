@@ -24,11 +24,11 @@ function Calendar() {
   const [events, setEvents] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
-  const customStyles = {
-    content: {
-      background: 'black'
-    }
-  }
+  // const customStyles = {
+  //   content: {
+  //     background: 'black'
+  //   }
+  // }
 
   const style = {
     position: 'absolute',
@@ -91,6 +91,7 @@ function Calendar() {
 
       {user?.isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
 
+      <CustomButton onClick={openEventModal} type="button" buttonText='+' />
       <div className="calendar-grid">
         {
           currentMonth.map(date => {
@@ -107,7 +108,7 @@ function Calendar() {
         }
       </div>
 
-      {/* <Modal
+      <Modal
         open={modalOpen}
         onClose={closeEventModal}
         aria-labelledby="modal-modal-title"
@@ -115,15 +116,23 @@ function Calendar() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            Add an event
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }}>
+            Add your event to the calendar.
           </Typography>
-        </Box>
-      </Modal> */}
+          <form onSubmit={handleCreateEventFormSubmit}>
+            <InputField id="title" label="Title" type="text" />
+            <InputField id="description" label="Description" type="textarea" />
+            <InputField id="duration" label="Duration" type="number" />
+            <InputField id="startTime" label="Date" type="date" />
 
-      <Modal
+            <CustomButton type="submit" buttonText='Create Event' />
+          </form>
+        </Box>
+      </Modal>
+
+      {/* <Modal
         isOpen={modalOpen}
         onRequestClose={closeEventModal}
         style={customStyles}>
@@ -137,7 +146,7 @@ function Calendar() {
           <CustomButton type="submit" buttonText='Create Event' />
         </form>
 
-      </Modal>
+      </Modal> */}
     </div>
   );
 }
