@@ -27,8 +27,9 @@ function renderEvent(event, handleDelete) {
 }
 
 function Calendar() {
-  const [events, setEvents] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
+  const user = useUser()
+  const [events, setEvents] = useState(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const customStyles = {
     content: {
