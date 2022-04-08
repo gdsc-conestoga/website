@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import Modal from 'react-modal'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import CustomButton from '../../components/CustomButton/CustomButton'
 import InputField from '../../components/InputField/InputField'
 import { addEvent, listenToEvents } from '../../services/firestoreService'
@@ -20,11 +22,17 @@ function Calendar() {
   const [events, setEvents] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
-  const customStyles = {
-    content: {
-      background: 'black'
-    }
-  }
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
   useEffect(() => {
     const unsubscribe = listenToEvents((events) => {
@@ -33,7 +41,7 @@ function Calendar() {
 
     return () => unsubscribe()
   }, [])
-  
+
   const openEventModal = () => setModalOpen(true)
   const closeEventModal = () => setModalOpen(false)
 
@@ -50,7 +58,7 @@ function Calendar() {
   }
 
   const currentMonth = []
-  var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const selectedMonth = new Date().getMonth()
   const runningDate = new Date()
 
@@ -60,10 +68,10 @@ function Calendar() {
   }
 
   if (!events) {
-    return(
+    return (
       <div className="calendar-container">
         <div>Loading...</div>
-      </div>  
+      </div>
     )
   }
 
@@ -78,8 +86,8 @@ function Calendar() {
       <div className="calendar-grid">
         {
           currentMonth.map(date => {
-            const event = events.find(e => 
-              e.startTime.toDate().getMonth() === selectedMonth && 
+            const event = events.find(e =>
+              e.startTime.toDate().getMonth() === selectedMonth &&
               e.startTime.toDate().getDate() === date.getDate())
             return (
               <div className='calendar-cell' key={date.getDate()}>
@@ -91,20 +99,28 @@ function Calendar() {
         }
       </div>
 
-      <Modal 
-        isOpen={modalOpen} 
-        onRequestClose={closeEventModal}
-        style={customStyles}>
-        
-        <form onSubmit={handleCreateEventFormSubmit}>
-          <InputField id="title" label="Title" type="text" />
-          <InputField id="description" label="Description" type="textarea" />
-          <InputField id="duration" label="Duration" type="number" />
-          <InputField id="startTime" label="Date" type="date" />
+      <Modal
+        open={modalOpen}
+        onClose={closeEventModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Add an event
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }}>
+            Add your event to the calendar.
+          </Typography>
+          <form onSubmit={handleCreateEventFormSubmit}>
+            <InputField id="title" label="Title" type="text" />
+            <InputField id="description" label="Description" type="textarea" />
+            <InputField id="duration" label="Duration" type="number" />
+            <InputField id="startTime" label="Date" type="date" />
 
-          <CustomButton type="submit" buttonText='Create Event' />
-        </form>
-
+            <CustomButton type="submit" buttonText='Create Event' />
+          </form>
+        </Box>
       </Modal>
     </div>
   );
