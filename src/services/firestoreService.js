@@ -15,6 +15,7 @@ export async function listenToEvents(onUpdate) {
   const eventsCollection = collection(db, "events");
   const eventsQuery = query(eventsCollection, where("title", "!=", ""));
   return onSnapshot(eventsQuery, (querySnapshot) => {
+    console.log("Updating events");
     onUpdate(
       querySnapshot.docs.map((doc) => ({
         id: doc.id,

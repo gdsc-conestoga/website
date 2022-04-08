@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { Delete } from "@mui/icons-material";
-import CustomButton from "../../components/CustomButton/CustomButton";
-import InputField from "../../components/InputField/InputField";
+import CustomButton from "../../components/customButton/customButton";
+import InputField from "../../components/inputField/InputField";
 import {
   addEvent,
   listenToEvents,
   deleteEvent,
 } from "../../services/firestoreService";
-import { useUser } from "../../utils/hooks";
 import "./Calendar.css";
 
 function renderEvent(event, handleDelete) {
@@ -28,7 +27,6 @@ function renderEvent(event, handleDelete) {
 }
 
 function Calendar() {
-  const user = useUser();
   const [events, setEvents] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
