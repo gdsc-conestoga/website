@@ -4,8 +4,7 @@ import { useContext } from 'react'
 import { ThemeContext } from '../../providers/ThemeProvider'
 
 export default function ThemeSwitcher({ ...args }) {
-  const onThemeChanged = () => {}
-  const { theme } = useContext(ThemeContext)
+  const { theme, onThemeChanged } = useContext(ThemeContext)
 
   return <div {...args}>
     {
