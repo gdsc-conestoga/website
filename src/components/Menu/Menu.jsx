@@ -6,7 +6,7 @@ import './Menu.css'
 import Account from '../Account/Account'
 import NavItem from './NavItem/NavItem'
 
-function Menu({ theme, onThemeChanged }) {
+function Menu() {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -23,7 +23,7 @@ function Menu({ theme, onThemeChanged }) {
           <NavItem label='Blog' path='/blog' onSelect={() => setToggle(false)} />
         </ul>
 
-        <ThemeSwitcher theme={theme} onThemeChanged={onThemeChanged} className='menu-item' />
+        <ThemeSwitcher className='menu-item' />
         <Account className='menu-item' />
 
         <div className='hamburger' onClick={() => setToggle(!toggle)}>
