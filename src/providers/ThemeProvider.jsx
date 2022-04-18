@@ -14,7 +14,7 @@ export function ThemeProvider({ children }) {
   }
 
   return <div data-theme={theme}>
-    <ThemeContext.Provider value={{ theme: 'light', onThemeChanged: switchTheme }}>
+    <ThemeContext.Provider value={{ theme, onThemeChanged: switchTheme }}>
       {children}
     </ThemeContext.Provider>
   </div>
