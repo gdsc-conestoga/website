@@ -1,70 +1,99 @@
-import { useEffect, useState } from 'react'
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import CustomButton from '../../components/CustomButton/CustomButton'
-import InputField from '../../components/InputField/InputField'
-import { addEvent, listenToEvents } from '../../services/firestoreService'
-import { useUser } from '../../utils/hooks'
-import './Calendar.css'
+import { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import { Delete } from "@mui/icons-material";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import InputField from "../../components/InputField/InputField";
+import {
+  addEvent,
+  listenToEvents,
+  deleteEvent,
+} from "../../services/firestoreService";
+import { useUser } from "../../utils/hooks";
+import "./Calendar.css";
 
-function renderEvent(event) {
+function renderEvent(event, handleDelete, user) {
   return (
-    <div key={event.id} className='event'>
+    <div key={event.id} className="event">
       <h3>{event.title}</h3>
       <p>{event.duration}h</p>
+      {user?.isAdmin && (
+        <div className="deleteEvent">
+          <Delete
+            onClick={() => handleDelete(event.id)}
+            color="action"
+            fontSize="small"
+          />
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 function Calendar() {
-  const user = useUser()
-  const [events, setEvents] = useState(null)
-  const [modalOpen, setModalOpen] = useState(false)
+  const user = useUser();
+  const [events, setEvents] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
+    bgcolor: "background.paper",
+    border: "2px solid #000",
     boxShadow: 24,
     p: 4,
   };
 
   useEffect(() => {
     const unsubscribe = listenToEvents((events) => {
-      setEvents(events)
-    })
+      setEvents(events);
+    });
 
-    return () => unsubscribe()
-  }, [])
+    return () => unsubscribe();
+  }, []);
 
-  const openEventModal = () => setModalOpen(true)
-  const closeEventModal = () => setModalOpen(false)
+  const openEventModal = () => setModalOpen(true);
+  const closeEventModal = () => setModalOpen(false);
 
   const handleCreateEventFormSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const newEvent = {
       title: e.target.title.value,
       description: e.target.description.value,
       duration: +e.target.duration.value,
-      startTime: new Date(e.target.startTime.value)
-    }
-    await addEvent(newEvent)
-    closeEventModal()
-  }
-
-  const currentMonth = []
-  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const selectedMonth = new Date().getMonth()
-  const runningDate = new Date()
+      startTime: new Date(e.target.startTime.value),
+    };
+    await addEvent(newEvent);
+    closeEventModal();
+  };
+  const handleDelete = async (eventId) => {
+    await deleteEvent(eventId);
+  };
+  const currentMonth = [];
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const selectedMonth = new Date().getMonth();
+  const runningDate = new Date();
 
   for (let date = 1; date <= 28; date++) {
-    runningDate.setDate(date)
-    currentMonth.push(new Date(runningDate))
+    runningDate.setDate(date);
+    currentMonth.push(new Date(runningDate));
   }
 
   if (!events) {
@@ -72,7 +101,7 @@ function Calendar() {
       <div className="calendar-container">
         <div>Loading...</div>
       </div>
-    )
+    );
   }
 
   return (
@@ -81,22 +110,24 @@ function Calendar() {
 
       <h2>{months[selectedMonth]}</h2>
 
-      {user?.isAdmin && <CustomButton onClick={openEventModal} type="button" buttonText='+' />}
+      {user?.isAdmin && (
+        <CustomButton onClick={openEventModal} type="button" buttonText="+" />
+      )}
 
       <div className="calendar-grid">
-        {
-          currentMonth.map(date => {
-            const event = events.find(e =>
+        {currentMonth.map((date) => {
+          const event = events.find(
+            (e) =>
               e.startTime.toDate().getMonth() === selectedMonth &&
-              e.startTime.toDate().getDate() === date.getDate())
-            return (
-              <div className='calendar-cell' key={date.getDate()}>
-                <div className='calendar-cell-date'>{date.getDate()}</div>
-                {event && renderEvent(event)}
-              </div>
-            )
-          })
-        }
+              e.startTime.toDate().getDate() === date.getDate()
+          );
+          return (
+            <div className="calendar-cell" key={date.getDate()}>
+              <div className="calendar-cell-date">{date.getDate()}</div>
+              {event && renderEvent(event, handleDelete, user)}
+            </div>
+          );
+        })}
       </div>
 
       <Modal
@@ -118,7 +149,7 @@ function Calendar() {
             <InputField id="duration" label="Duration" type="number" />
             <InputField id="startTime" label="Date" type="date" />
 
-            <CustomButton type="submit" buttonText='Create Event' />
+            <CustomButton type="submit" buttonText="Create Event" />
           </form>
         </Box>
       </Modal>
